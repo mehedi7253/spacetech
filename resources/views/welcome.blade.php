@@ -7,19 +7,24 @@
     <title>SpaceTech Elevator & Escalator</title>
     <link rel="stylesheet" href="{{ asset('assets/style/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/style/main.css') }}" type="text/css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="top_header">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-12 float-left" style="border: 1px solid red">
-
+                <div class="col-md-10 col-sm-12 float-left top_header_link">
+                    <i class="fa fa-phone"></i><a href="tel:01730711050" class="text-decoration-none"> (+88) 01730 711050</a> |
+                    <i class="fa fa-envelope"></i><a href="mailto:corporateask@gmail.com?subject = Feedback&body = Message" class="text-decoration-none"> spacetechelevators@gmail.com</a> |
+                    <i class="fa fa-clock-o"> 247/7 Hours Working</i>
                 </div>
-                <div class="col-md-2 col-sm-12 float-left" style="border: 1px solid red">
-
-                </div>
-                <div class="col-md-2 col-sm-12 float-left" style="border: 1px solid red">
-
+                <div class="col-md-2 col-sm-12 float-left top_social_icon">
+                    <ul>
+                        <li class="fa fa-facebook fa-1x"></li>
+                        <li class="fa fa-youtube fa-1x"></li>
+                        <li class="fa fa-envelope fa-1x"></li>
+                    </ul>
                 </div>
             </div>
         </div>

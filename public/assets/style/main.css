@@ -1,5 +1,29 @@
+/* top bar */
 .top_header{
     height: auto;
     width: 100%;
-    background-color: blue;
+    background-color: #0072BC;
+}
+.top_header_link{
+    color: white;
+    padding: 12px;
+    font-family: 'Barlow';
+    font-size: 13px;
+}
+.top_header_link a{
+    color: white;
+    font-family: 'Barlow';
+    font-size: 13px;
+}
+.top_header_link a:hover{
+    color: white;
+    font-family: 'Barlow';
+    font-size: 13px;
+}
+.top_social_icon{
+    padding-top: 10px;
+    color: white;
+}
+.top_social_icon ul li{
+    margin: 4px;
 }
