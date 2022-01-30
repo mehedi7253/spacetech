@@ -1,12 +1,12 @@
 /* top bar */
 .top_header{
-    height: auto;
+    height: 33px;
     width: 100%;
     background-color: #0072BC;
 }
 .top_header_link{
     color: white;
-    padding: 12px;
+    padding: 6px;
     font-family: 'Barlow';
     font-size: 13px;
 }
@@ -21,9 +21,23 @@
     font-size: 13px;
 }
 .top_social_icon{
-    padding-top: 10px;
+    padding-top: 4px;
     color: white;
 }
 .top_social_icon ul li{
     margin: 4px;
+}
+.carousel-item img{
+    height: 520px;
+}
+
+
+/* media */
+@media only screen and (max-width: 600px) {
+    .top_header{
+        height: auto;
+    }
+    .carousel-item img{
+        height: auto;
+    }
 }
