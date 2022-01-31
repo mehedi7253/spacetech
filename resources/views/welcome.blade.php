@@ -49,30 +49,27 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#event">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Product</a>
+                        <a class="nav-link" href="#dance">Techonology</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                           Our Services
-                        </a>
+                        <a class="nav-link" href="#about">Product</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" target="_blank" href="students/student_reg.php"> Registration</a>
-                            <a class="dropdown-item" target="_blank" href="students/student_login.php">Student Login</a>
-                            <a class="dropdown-item" target="_blank" href="admin/admin_login.php">Admin Login</a>
+                            <a class="dropdown-item" target="_blank" href="">About Us </a>
+                            <a class="dropdown-item" target="_blank" href="">Team Member</a>
                         </div>
-
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#event">About</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" target="_blank" href="">About Us </a>
+                            <a class="dropdown-item" target="_blank" href="">Team Member</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Elevator</a>
+                        <a class="nav-link" href="#about">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#teachers">Previous Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#dance">Machine Room</a>
+                        <a class="nav-link" href="#teachers">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Us</a>
@@ -87,19 +84,20 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          {{-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> --}}
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="{{ asset('images/banner/Banner_1.jpg') }}" alt="First slide">
-            {{-- <div class="carousel-caption">
-                <h3>Los Angeles</h3>
-                <p>LA is always so much fun!</p>
-              </div> --}}
+            <div class="col-md-7 mx-auto carousel-caption" style="border: 1px solid red">
+                <h2 class="text-white font-weight-bold font-italic" style="font-size: 70px; font-weight: 700; text-shadow: 5px 5px 3px #000;"><span style="color:#0172BC;">SpaceTech</span> <br/>
+                    <span style="color: #FF0202;">Elevator & Escalator</span>
+                </h2>
+            </div>
         </div>
-          <div class="carousel-item">
+          {{-- <div class="carousel-item">
             <img class="d-block w-100" src="{{ asset('images/banner/elevator-engine-elevator-engine-abandoned-house-118425485.jpg') }}" alt="Second slide" >
           </div>
           <div class="carousel-item">
@@ -108,7 +106,7 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="{{ asset('images/banner/istockphoto-1045852986-612x612.jpg') }}" alt="Fourth slide" >
           </div>
-        </div>
+        </div> --}}
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -119,7 +117,7 @@
         </a>
 
 
-        <section class="slider_contatct" style="margin-top: -35%;">
+        {{-- <section class="slider_contatct" style="margin-top: -35%;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-12 mb-5 mt-5 float-left">
@@ -155,9 +153,7 @@
                     </div>
                 </div>
             </div>
-
-        </section>
-
+        </section> --}}
 
       </div>
 

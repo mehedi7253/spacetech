@@ -27,8 +27,8 @@
 .top_social_icon ul li{
     margin: 4px;
 }
-.carousel-item img{
-    height: 520px;
+.carousel-item{
+    min-height: 280px;
 }
 
 
@@ -37,7 +37,5 @@
     .top_header{
         height: auto;
     }
-    .carousel-item img{
-        height: auto;
-    }
+    
 }
