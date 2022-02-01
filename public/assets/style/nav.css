@@ -82,6 +82,51 @@ nav {
     padding-top: 900px;
 }
 
+.filter-button {
+    font-size: 18px;
+    border: 1px solid #0072BC;
+    border-radius: 5px;
+    text-align: center;
+    color: red;
+    margin-bottom: 30px
+  }
+
+  .filter-button:hover {
+    font-size: 18px;
+    border: 1px solid #0072BC;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: red
+  }
+
+  .btn-default:active .filter-button:active {
+    background-color: red;
+    color: white
+  }
+  .caption {
+    width: 100%;
+    height: 30px;
+    margin-top: -30px;
+    position: relative;
+    text-align: center;
+    padding: 2px;
+    cursor: pointer;
+    opacity: .9;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .caption a{
+    font-size: 15px;
+    color: white;
+    font-family: 'Raleway';
+    font-weight: lighter;
+  }
+  .filter_image{
+    border: 1.5px solid #0072BC;
+    height: 200px;
+    width: 100%;
+  }
+
 /* mobile view */
 
 @media (max-width:500px) {

@@ -27,15 +27,61 @@
 .top_social_icon ul li{
     margin: 4px;
 }
-.carousel-item{
-    min-height: 280px;
+.carousel-item img{
+    height: 520px;
+}
+.banner_text{
+    font-size: 70px;
+    font-weight: 700;
+    text-shadow: 5px 5px 3px #000;
+}
+.carousel_caption{
+    margin-top: -25%;
+    position: absolute;
+    text-align: center;
 }
 
+/* about us */
+.about_us{
+    height: auto;
+    background-color: white;
+}
+.about_heading{
+    border-bottom: 4px solid red;
+    width: 15%;
+}
+.service_provide{
+    border-bottom: 4px solid #0072BC;
+    width: 50%;
+}
+/* working demo */
+
+.showcase{
+    background-color: #E2EFF7;
+    height: auto;
+   /* background-image: url('../../images/360_F_323175560_2GwdE9i8wZoRrAHNZHINrP3BKPuv1W6t.jpg');
+   height: auto;
+   width: 100%;
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   background-attachment: fixed; */
+  }
+  
 
 /* media */
 @media only screen and (max-width: 600px) {
     .top_header{
         height: auto;
     }
-    
+    .carousel_caption{
+        margin-top: -76%;
+        position: absolute;
+        text-align: center;
+    }
+    .banner_text{
+        font-size: 35px;
+        font-weight: 900;
+        text-shadow: 5px 5px 3px #000;
+    }
+
 }
