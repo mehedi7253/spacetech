@@ -46,10 +46,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#dance">Techonology</a>
+                        <a class="nav-link" href="{{ url('technology') }}">Techonology</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#about">Product</a>
