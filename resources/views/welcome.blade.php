@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-10 col-sm-12 float-left top_header_link">
                     <i class="fa fa-phone"></i><a href="tel:01730711050" class="text-decoration-none"> (+88) 01730 711050</a> |
-                    <i class="fa fa-envelope"></i><a href="mailto:corporateask@gmail.com?subject = Feedback&body = Message" class="text-decoration-none"> spacetechelevators@gmail.com</a> |
+                    <i class="fa fa-envelope"></i><a href="mailto:spacetechelevators@gmail.com?subject = Feedback&body = Message" class="text-decoration-none"> spacetechelevators@gmail.com</a> |
                     <i class="fa fa-clock-o"> 24/7 Suport</i>
                 </div>
                 <div class="col-md-2 col-sm-12 float-left top_social_icon">
@@ -222,9 +222,111 @@
         </div>
     </section>
     {{-- working demo --}}
+
+    {{-- our client --}}
+    <section class="our_client">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 mt-5 mb-5">
+                    <h3 class="text-center text-danger font-weight-bold">We Deal With</h3>
+                    <div class="col-md-4 col-sm-12 float-left mt-5 deal_card">
+                        <div class="card">
+                            <img src="{{ asset('images/deal/Asset 2.png') }}" class="deal_image" alt="sigma">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 float-left mt-5">
+                        <div class="card" style="border: 2px solid #0172BC; box-shadow: 5px 7px #888888;">
+                            <img src="{{ asset('images/deal/Capture.PNG') }}" class="deal_image_fuji" alt="sigma">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 float-left mt-5 deal_card">
+                        <div class="card">
+                            <img src="{{ asset('images/deal/Asset 4.png') }}" class="deal_image_3" alt="sigma">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- our client --}}
+
+    {{-- bigfooter --}}
+    <section class="bigfooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 float-left">
+                    <h4 class="mt-3 mb-3 text-white text-uppercase">About Us</h4>
+                    <hr class="footer_about">
+                    <p class="text-justify text-white">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, magni dolorem, quis unde odio magnam eligendi
+                    </p>
+                    <div class="col-md-8 mx-auto">
+                        <ul class="social_icon_footer">
+                            <a href=""><li class="fa fa-facebook fa-2x"></li></a>
+                            <a href=""><li class="fa fa-youtube fa-2x"></li></a>
+                            <a href=""><li class="fa fa-envelope fa-2x"></li></a>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-12 float-left">
+                    <h4 class="mt-3 mb-3 text-white text-uppercase ml-4">Address</h4>
+                    <hr class="footer_about ml-4">
+                    <div class="place">
+                        <a href="" class="fa fa-map-marker"></a>
+                        <span class="text">464/C, Khilgaon, Dhaka-1219, Bangladesh</span>
+                    </div>
+                    <div class="place">
+                        <a href="" class="fa fa-phone"></a>
+                        <span class="text">+080 1730711050</span>
+                    </div>
+                    <div class="place">
+                        <a href="" class="fa fa-envelope"></a>
+                        <span class="text">spacetechelevators@gmail.com</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 float-left">
+                    <h4 class="mt-3 mb-3 text-white text-uppercase ml-4">Contact US</h4>
+                    <hr class="footer_about ml-4">
+                   <div class="ml-4">
+                    <form>
+                        <div class="form-group">
+                            <label class="text-white">Email <sup class="font-weight-bold text-danger">*</sup></label>
+                            <input type="email" name="email" placeholder="Enter Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white">Message <sup class="font-weight-bold text-danger">*</sup></label>
+                            <textarea name="message" class="form-control" placeholder="Enter Your Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="send" class="btn btn-danger btn-block">
+                        </div>
+                    </form>
+                   </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- bigfooter --}}
+    {{-- footer --}}
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <p class="text-center text-white" style="margin: 5px">Copyright By <span class="fa fa-copyright"></span> SpaceTech Elevators</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- footer --}}
+    <button id="topBtn">
+        <i class="fa fa-arrow-up"></i>
+    </button>
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/filter.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
          $(document).on("scroll", function() {
             if ($(document).scrollTop() > 86) {

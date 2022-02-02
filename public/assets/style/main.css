@@ -55,19 +55,121 @@
     width: 50%;
 }
 /* working demo */
-
 .showcase{
     background-color: #E2EFF7;
     height: auto;
-   /* background-image: url('../../images/360_F_323175560_2GwdE9i8wZoRrAHNZHINrP3BKPuv1W6t.jpg');
-   height: auto;
-   width: 100%;
-   background-size: 100% 100%;
-   background-repeat: no-repeat;
-   background-attachment: fixed; */
   }
-  
+/* deal */
+.our_client{
+    height: auto;
+    background-color: white;
+}
+.deal_image{
+    height: auto;
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 26%;
+    margin-bottom: 10%;
+}
+.deal_card .card{
+    border: 2px solid red;
+    box-shadow: 5px 7px #888888;
+}
+.deal_image_fuji{
+    height: auto;
+    width: 40%;
+    margin-top: 16%;
+    margin-left: 26%;
+    margin-bottom: 10%;
+}
+.deal_image_3{
+    height: auto;
+    width: 40%;
+    margin-top: 20%;
+    margin-left: 26%;
+    margin-bottom: 14%;
+}
+/* bigfooter */
+.bigfooter{
+    background-color: #111111;
+    height: auto;
+    border-bottom: 1px solid antiquewhite;
+}
+.footer_about{
+    border-bottom: 4px solid red;
+    width: 20%;
+    position: absolute;
+    margin-top: -20px;
+}
 
+.social_icon_footer a li{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50%;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.social_icon_footer a li:hover{
+    background-color: red;
+    color: white;
+}
+.place{
+    margin: 10px;
+}
+.place a{
+    height: 30px;
+    width: 30px;
+    background: #1a1a1a;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50%;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+.place span{
+    color: white;
+}
+.place a:hover{
+   background-color: red;
+   color: white;
+}
+
+.footer{
+    background-color: #000;
+    height: auto
+}
+
+/* top to down button */
+.tp{
+    width: 25%;
+}
+#topBtn{
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    border-radius: 50%;
+}
+#topBtn:hover{
+    background-color: white;
+    color: black;
+    border: none;
+}
 /* media */
 @media only screen and (max-width: 600px) {
     .top_header{
