@@ -170,6 +170,17 @@
     color: black;
     border: none;
 }
+.ceo_image{
+    height: 246px;
+    width: 58%;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+
+/* product */
+.view_more{
+    margin-right: 10%;
+}
 /* media */
 @media only screen and (max-width: 600px) {
     .top_header{

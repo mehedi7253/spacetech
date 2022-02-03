@@ -16,21 +16,21 @@
                 <a class="nav-link" href="{{ url('technology') }}">Techonology</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="#about">Product</a>
+                <a class="nav-link" href="">Product</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" target="_blank" href="">About Us </a>
-                    <a class="dropdown-item" target="_blank" href="">Team Member</a>
+                    <a class="dropdown-item" href="{{ url('products/show') }}">Product Name </a>
+                    <a class="dropdown-item"  href="{{ url('products') }}">More</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#event">About</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" target="_blank" href="">About Us </a>
-                    <a class="dropdown-item" target="_blank" href="">Team Member</a>
+                    <a class="dropdown-item"  href="{{ url('about') }}">About Us </a>
+                    <a class="dropdown-item" href="{{ url('team-members') }}">Team Member</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">Features</a>
+                <a class="nav-link" href="{{ url('fetaures') }}">Features</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#teachers">Projects</a>

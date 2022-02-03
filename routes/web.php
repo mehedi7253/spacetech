@@ -24,3 +24,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/technology', function () {
     return view('pages.technology');
 });
+Route::get('/products', function () {
+    return view('pages.product.index');
+});
+
+Route::get('/products/show', function () {
+    return view('pages.product.show');
+});
+Route::get('/fetaures', function () {
+    return view('pages.features.index');
+});
+
+Route::get('/about', function () {
+    return view('pages.about.index');
+});
+Route::get('/team-members', function () {
+    return view('pages.about.team_member');
+});
