@@ -41,3 +41,6 @@ Route::get('/about', function () {
 Route::get('/team-members', function () {
     return view('pages.about.team_member');
 });
+Route::get('/contact', function () {
+    return view('pages.contact.index');
+});

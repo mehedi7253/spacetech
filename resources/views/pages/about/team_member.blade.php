@@ -15,4 +15,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 float-left">
+                    <div class="card mt-5 mb-5" style="border: 2px solid red; border-radius: 10px">
+                        <div class="card-body text-center">
+                            <img src="{{ asset('images/team/icon-5359553_1280.png') }}" class="member_image">
+                            <h3 class="mt-4">Member Name</h3>
+                            <p>Desgnation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     @endsection

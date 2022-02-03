@@ -33,10 +33,7 @@
                 <a class="nav-link" href="{{ url('fetaures') }}">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#teachers">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact Us</a>
+                <a class="nav-link" href="{{ url('contact') }}">Contact Us</a>
             </li>
         </ul>
     </div>

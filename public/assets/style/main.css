@@ -176,7 +176,11 @@
     border-radius: 50%;
     border: 2px solid red;
 }
-
+.member_image{
+    height: 160px;
+    width: 50%;
+    border-radius: 50%;
+}
 /* product */
 .view_more{
     margin-right: 10%;
