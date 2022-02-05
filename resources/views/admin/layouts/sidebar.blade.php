@@ -19,9 +19,21 @@
     </a>
     <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="">Add Prodcut</a>
-        <a class="collapse-item" href="">Manage Prodcut</a>
+        <a class="collapse-item" href="{{ route('products.create') }}">Add Prodcut</a>
+        <a class="collapse-item" href="{{ route('products.index') }}">Manage Prodcut</a>
       </div>
     </div>
   </li>
-  
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
+      aria-expanded="true" aria-controls="collapseBootstrap">
+      <i class="far fa-fw fa-window-maximize"></i>
+      <span>Technology</span>
+    </a>
+    <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" href="{{ route('technologies.create') }}">Add Technology</a>
+        <a class="collapse-item" href="{{ route('technologies.index') }}">Manage Technology</a>
+      </div>
+    </div>
+  </li>
