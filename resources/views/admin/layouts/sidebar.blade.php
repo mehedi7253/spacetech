@@ -37,3 +37,8 @@
       </div>
     </div>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('abouts.index') }}">
+      <i class="far fa-fw fa-window-maximize"></i>
+      <span>About US</span></a>
+  </li>

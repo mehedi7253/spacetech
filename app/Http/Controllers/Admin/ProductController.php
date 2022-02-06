@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -56,7 +57,7 @@ class ProductController extends Controller
         $product->product_name = $request->product_name;
         $product->url          = $request->url;
 
-        if($request->image == ''){
+        if($request->product_image == ''){
             //
         }else{
             if ($request->hasFile('product_image')) {
@@ -83,7 +84,14 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $page_name = "Product Details";
+        $products = DB::table('product_metas')
+            ->join('products', 'products.id', '=', 'product_metas.product_id')
+            ->select('products.id as productID', 'product_metas.*')
+            ->where('products.id','=', $id)
+            ->get();
+
+        return view('admin.product.show', compact('page_name','products'));
     }
 
     /**
@@ -109,22 +117,17 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'name'  => 'required',
+            'product_name'  => 'required',
             'product_image' => 'required | mimes:jpg,png,jpeg|max:7048',
-            'url'           => 'required | unique:products'
         ],[
-            'name.required'  => 'Please Enter Product Name',
+            'product_name.required'  => 'Please Enter Product Name',
             'product_image.required' => 'Please Enter Product Image',
             'product_image.mimes'    => 'Please Select Jpg,png,jpeg Type',
             'product_image.max'      => 'Please Select Image Less Then 8 Mb',
-            'url.required'           => 'Please Enter Blog URL',
-            'url.unique '            => 'All Ready taken',
         ]);
 
         $product   = product::find($id);
-        $product->name = $request->name;
-        $product->url          = $request->url;
-
+        $product->product_name = $request->product_name;
         if($request->product_image == ''){
             //
         }else{

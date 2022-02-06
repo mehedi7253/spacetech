@@ -11,10 +11,20 @@
 
       <div class="card">
         <div class="card-header">
-            <h5 class="text-primary">Add product <a class="btn btn-info float-right" href="{{ route('products.index') }}">All Product</a></h5>
+            <h5 class="text-primary">Add Technology <a class="btn btn-info float-right" href="{{ route('technologies.index') }}">All Technology</a></h5>
             <hr/>
         </div>
         <div class="card-body">
+            @if (session('success'))
+                <div class="col-sm-12">
+                    <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                </div>
+            @endif
             <form action="{{ route('technologies.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
@@ -36,7 +46,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>Prodcut Image: <sup class="text-danger">*</sup></label>
+                    <label>Technology Image: <sup class="text-danger">*</sup></label>
                     <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}">
                     @error('image')
                     <span class="invalid-feedback" role="alert">
@@ -45,9 +55,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>Prodcut Image: <sup class="text-danger">*</sup></label>
-                    <textarea name="description" class="form-control"></textarea>
-                    @error('image')
+                    <label>Prodcut Description: <sup class="text-danger">*</sup></label>
+                    <textarea id="application" name="description" placeholder="Enter Description" class="form-control @error('description') is-invalid @enderror"></textarea>
+                    @error('description')
                     <span class="invalid-feedback" role="alert">
                          <label style="color: red">{{ $message }}</label>
                      </span>
@@ -61,4 +71,20 @@
         </div>
       </div>
 
+    @endsection
+    @section('script')
+    <script>
+        CKEDITOR.replace('application',
+            {
+                height:300,
+                resize_enabled:true,
+                wordcount: {
+                    showParagraphs: false,
+                    showWordCount: true,
+                    showCharCount: true,
+                    countSpacesAsChars: true,
+                    countHTML: false,
+                    maxCharCount: 20}
+            });
+    </script>
     @endsection

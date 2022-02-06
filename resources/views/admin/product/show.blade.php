@@ -11,7 +11,7 @@
 
       <div class="card">
         <div class="card-header">
-            <h5 class="text-primary">All Technologies <a href="{{ route('technologies.create') }}" class="btn btn-info float-right">Add Technology</a></h5>
+            <h5 class="text-primary">All Products <a href="{{ route('products.create') }}" class="btn btn-info float-right">Add Product</a></h5>
             <hr/>
         </div>
         <div class="card-body">
@@ -30,28 +30,42 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>URL</th>
-                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Image one</th>
+                            <th>Image Two</th>
+                            <th>Image Three</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($technologies as $i=>$technology)
+                        @foreach ($products as $i=>$product)
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $technology->tech_name }}</td>
-                            <td>{{ $technology->url }}</td>
+                            <td>{{ $product->title }}</td>
                             <td>
-                                @if ($technology->image == NULL)
+                                @if ($product->image_one == NULL)
                                     NULL
                                 @else
-                                    <img src="{{ asset('technology/product/images/'.$technology->image) }}" class="img-thumbnail" style="height: 50px; width: 50px">
+                                    <img src="{{ asset('images/product/images/'.$product->image_one) }}" class="img-thumbnail" style="height: 50px; width: 50px">
                                 @endif
                             </td>
                             <td>
-                                <form action="{{ route('technologies.destroy', $technology->id) }}" method="POST">
-                                    <a class="btn btn-info" href="{{ route('technologies.edit', $technology->id) }}"><i class="fa fa-edit"></i></a> |
+                                @if ($product->image_two == NULL)
+                                    NULL
+                                @else
+                                    <img src="{{ asset('images/product/images/'.$product->image_two) }}" class="img-thumbnail" style="height: 50px; width: 50px">
+                                @endif
+                            </td>
+                            <td>
+                                @if ($product->image_three == NULL)
+                                    NULL
+                                @else
+                                    <img src="{{ asset('images/product/images/'.$product->image_three) }}" class="img-thumbnail" style="height: 50px; width: 50px">
+                                @endif
+                            </td>
+                            <td>
+                                <form action="{{ route('productmetas.destroy', $product->id) }}" method="POST">
+                                    <a class="btn btn-info" href="{{ route('productmetas.edit', $product->id) }}"><i class="fa fa-edit"></i></a> |
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure to delete !!');"><i class="fa fa-trash"></i></button>
@@ -62,9 +76,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="card-footer">
-
         </div>
       </div>
 
