@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductmetaController;
 use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Page\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,13 +33,11 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('abouts', AboutController::class);
 });
 
-Route::get('/technology', function(){
-    return view('pages.technology');
-});
+Route::get('our-technologies', [HomePageController::class, 'technology'])->name('our-technologies');
+Route::get('products', [HomePageController::class, 'products'])->name('pages.products');
 
-Route::get('/products', function () {
-    return view('pages.product.index');
-});
+
+
 
 Route::get('/products/show', function () {
     return view('pages.product.show');

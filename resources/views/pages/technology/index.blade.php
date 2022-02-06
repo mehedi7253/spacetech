@@ -32,6 +32,9 @@
                         </div>
                     </div>
 
+                    <div class="d-flex justify-content-center">
+                        {{ $technology->links() }}
+                    </div>
 
                 </div>
 

@@ -13,13 +13,13 @@
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('technology') }}">Techonology</a>
+                <a class="nav-link" href="{{ route('our-technologies') }}">Techonology</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="">Product</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ url('products/show') }}">Product Name </a>
-                    <a class="dropdown-item"  href="{{ url('products') }}">More</a>
+                    <a class="dropdown-item" href="">Product Name </a>
+                    <a class="dropdown-item"  href="{{ route('pages.products') }}">More</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

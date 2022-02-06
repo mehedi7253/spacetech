@@ -46,13 +46,18 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('technology') }}">Techonology</a>
+                        <a class="nav-link" href="{{ route('our-technologies') }}">Techonology</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="">Product</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ url('products/show') }}">Product Name </a>
-                            <a class="dropdown-item"  href="{{ url('products') }}">More</a>
+                            @php
+                                $prodects = DB::table('products')->limit('4')->get();
+                            @endphp
+                            @foreach ($prodects as $product)
+                              <a class="dropdown-item" href="">{{ $product->product_name }} </a>
+                            @endforeach
+                            <a class="dropdown-item"  href="{{ route('pages.products') }}">More</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -133,10 +138,14 @@
             <div class="row">
                 <div class="col-md-7 col-sm-12 float-left mt-5 mb-5" style="border-right: 2px dotted #0172BC;">
                     <h3 class="font-weight-bold about_heading"><span style="color: #FF0202">About</span><span style="color: #0172BC">Us</span></h3>
-                    <p class="text-justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae hic quam debitis architecto doloribus dolor impedit? Fugit, esse! Officiis dolor ut, soluta architecto esse delectus praesentium expedita culpa facilis quis!
-                        <br/> <br/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae hic quam debitis architecto doloribus dolor impedit? Fugit, esse! Officiis dolor ut, soluta architecto esse delectus praesentium expedita culpa facilis quis!
-                    </p>
+                    @php
+                        $aboutus = DB::table('abouts')->get();
+                    @endphp
+                    @foreach ($aboutus as $about)
+                        <p class="text-justify" style="font-size: 30px">
+                            <?php echo $about->description ?>
+                        </p>
+                    @endforeach
                 </div>
                 <div class="col-md-5 col-sm-12 mt-5 mb-5 float-left">
                     <h3 class="font-weight-bold service_provide" style="color: #FF0202" >Service We<span style="color: #0172BC"> Provide</span> </h3>
