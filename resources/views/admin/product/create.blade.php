@@ -15,12 +15,17 @@
             <hr/>
         </div>
         <div class="card-body">
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
             <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Prodcut Name: <sup class="text-danger">*</sup></label>
-                    <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Enter Product Name" autocomplete="name" autofocus>
-                    @error('name')
+                    <input type="text" name="product_name" id="product_name" class="form-control @error('product_name') is-invalid @enderror" value="{{ old('product_name') }}" placeholder="Enter Product Name" autocomplete="product_name" autofocus>
+                    @error('product_name')
                     <span class="invalid-feedback" role="alert">
                          <label style="color: red">{{ $message }}</label>
                      </span>

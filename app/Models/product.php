@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     use HasFactory;
-    public $timestamps = true;
-    protected $table = 'products';
-    protected $fillable = [
-      'name','product_image','url'
-    ];
 }

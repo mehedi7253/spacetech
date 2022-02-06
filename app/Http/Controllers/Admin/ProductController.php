@@ -40,11 +40,11 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name'  => 'required',
-            'product_image' => 'required | mimes:jpg,png,jpeg|max:7048',
+            'product_name'  => 'required',
+            'product_image' => 'mimes:jpg,png,jpeg|max:7048',
             'url'           => 'required | unique:products'
         ],[
-            'name.required'  => 'Please Enter Product Name',
+            'product_name.required'  => 'Please Enter Product Name',
             'product_image.required' => 'Please Enter Product Image',
             'product_image.mimes'    => 'Please Select Jpg,png,jpeg Type',
             'product_image.max'      => 'Please Select Image Less Then 8 Mb',
@@ -53,20 +53,23 @@ class ProductController extends Controller
         ]);
 
         $product = new product();
-        $product->name = $request->name;
+        $product->product_name = $request->product_name;
         $product->url          = $request->url;
 
-        if ($request->hasFile('product_image')) {
-            $file = $request->file('product_image');
-            $extension = $file->getClientOriginalExtension();
-            $fileName = time() . '.' . $extension;
-            $file->move('images/product/images/', $fileName);
-            $product->product_image = $fileName;
-        } else {
-            return $request;
-            $product->product_image = '';
+        if($request->image == ''){
+            //
+        }else{
+            if ($request->hasFile('product_image')) {
+                $file = $request->file('product_image');
+                $extension = $file->getClientOriginalExtension();
+                $fileName = time() . '.' . $extension;
+                $file->move('images/product/images/', $fileName);
+                $product->product_image = $fileName;
+            } else {
+                return $request;
+                $product->product_image = '';
+            }
         }
-        return $product;
 
         $product->save();
         return back()->with('success','Product Added Successful');
