@@ -38,13 +38,14 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>URL: <sup class="text-danger">*</sup></label>
-                    <input id="url" type="text" class="form-control @error('url') is-invalid @enderror" disabled name="url" value="{{ $technology->url }}" placeholder="Enter URL" autocomplete="url" autofocus>
-                    @error('url')
-                    <span class="invalid-feedback" role="alert">
-                         <label style="color: red">{{ $message }}</label>
-                     </span>
-                    @enderror
+                    <label>Float: <sup class="text-danger">*</sup></label>
+                    <select class="form-control" name="site">
+                        @if ($technology->site == 'left')
+                            <option value="left">Left</option>
+                        @elseif ($technology->site == 'right')
+                            <option value="right">Right</option>
+                        @endif
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Technology Image: <sup class="text-danger">*</sup></label>
@@ -55,7 +56,7 @@
                      </span>
                     @enderror
                     <br/>
-                    <img src="{{ asset('technology/product/images/'.$technology->image) }}" style="height: 120px; width: 120px"><br/>
+                    <img src="{{ asset('images/technology/images/'.$technology->image) }}" style="height: 120px; width: 120px"><br/>
                 </div>
                 <div class="form-group">
                     <label>Prodcut Description: <sup class="text-danger">*</sup></label>

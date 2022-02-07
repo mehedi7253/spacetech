@@ -1,6 +1,6 @@
 <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown no-arrow">
-      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+      <a class="nav-link dropdown-toggle" href="{{ url('login') }}" id="userDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <img class="img-profile rounded-circle" src="{{ asset('images/team/icon-5359553_1280.png') }}" style="max-width: 60px">
         <span class="ml-2 d-none d-lg-inline text-white small">Admin</span>

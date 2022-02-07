@@ -15,13 +15,10 @@ class HomePageController extends Controller
         $aboutus = about::all();
         return view('welcome', compact('aboutus'));
     }
-    public function technology()
-    {
-        $technology = DB::table('technologies')->paginate(1);
-        return view('pages.technology.index', compact('technology'));
-    }
+   
     public function products()
     {
         return view('pages.product.index');
     }
+
 }

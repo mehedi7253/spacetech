@@ -37,13 +37,11 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>URL: <sup class="text-danger">*</sup></label>
-                    <input id="url" type="text" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ old('url') }}" placeholder="Enter URL" autocomplete="url" autofocus>
-                    @error('url')
-                    <span class="invalid-feedback" role="alert">
-                         <label style="color: red">{{ $message }}</label>
-                     </span>
-                    @enderror
+                    <label>Float: <sup class="text-danger">*</sup></label>
+                    <select class="form-control" name="site">
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Technology Image: <sup class="text-danger">*</sup></label>

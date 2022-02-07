@@ -43,28 +43,25 @@ class TechnologyController extends Controller
         $this->validate($request,[
             'tech_name'    => 'required',
             'image'        => 'required | mimes:jpg,png,jpeg|max:7048',
-            'description'  => 'required',
-            'url'          => 'required | unique:technologies'
+            'description'  => 'required'
         ],[
             'tech_name.required'   => 'Please Enter Technology Name',
             'image.required'       => 'Please Enter Technology Image',
             'image.mimes'          => 'Please Select Jpg,png,jpeg Type',
             'image.max'            => 'Please Select Image Less Then 8 Mb',
             'description.required' => 'Please Enter Description',
-            'url.required'         => 'Please Enter Blog URL',
-            'url.unique'           => 'All Ready taken',
         ]);
 
         $technology = new technology();
         $technology->tech_name   = $request->tech_name;
         $technology->description = $request->description;
-        $technology->url         = $request->url;
+        $technology->site        = $request->site;
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
-            $file->move('technology/product/images/', $fileName);
+            $file->move('images/technology/images/', $fileName);
             $technology->image = $fileName;
         } else {
             return $request;
@@ -123,6 +120,7 @@ class TechnologyController extends Controller
         $technology = technology::find($id);
         $technology->tech_name   = $request->tech_name;
         $technology->description = $request->description;
+        $technology->site        = $request->site;
 
         if($request->image == '')
         {
@@ -132,7 +130,7 @@ class TechnologyController extends Controller
                 $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension();
                 $fileName = time() . '.' . $extension;
-                $file->move('technology/product/images/', $fileName);
+                $file->move('images/technology/images/', $fileName);
                 $technology->image = $fileName;
             } else {
                 return $request;

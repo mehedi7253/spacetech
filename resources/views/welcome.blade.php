@@ -326,6 +326,42 @@
     <button id="topBtn">
         <i class="fa fa-arrow-up"></i>
     </button>
+
+    {{-- modal --}}
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="border: 2px solid #FF0202">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">
+                  <img src="{{ asset('images/quta/Asset 4.png') }}"><br/>
+                  <img class="ml-5" src="{{ asset('images/quta/Asset 5.png') }}">
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-4 float-left">
+                    <p class="text-center"><img src="{{ asset('images/quta/Asset 1.png') }}" style="height: auto;"></p>
+                    <p  class="text-center">SAFE</p>
+                </div>
+                <div class="col-md-4 float-left">
+                    <p class="text-center"> <img src="{{ asset('images/quta/Asset 2.png') }}" style="height: auto;"></p>
+                    <p class="text-center">SMOOTH</p>
+                </div>
+                <div class="col-md-4 float-left">
+                    <p class="text-center"> <img src="{{ asset('images/quta/Asset 3.png') }}" style="height: auto;"></p>
+                    <p class="text-center">SENSIBLE</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+        </div>
+      </div>
+
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/filter.js') }}"></script>
@@ -342,6 +378,10 @@
 
             }
         });
+
+        $(document).ready(function(){
+		$("#exampleModalCenter").modal('show');
+	});
     </script>
 </body>
 </html>
