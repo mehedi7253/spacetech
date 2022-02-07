@@ -142,7 +142,7 @@
                         $aboutus = DB::table('abouts')->get();
                     @endphp
                     @foreach ($aboutus as $about)
-                        <p class="text-justify" style="font-size: 30px">
+                        <p class="text-justify">
                             <?php echo $about->description ?>
                         </p>
                     @endforeach
