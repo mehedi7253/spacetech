@@ -118,10 +118,9 @@ class ProductController extends Controller
     {
         $this->validate($request,[
             'product_name'  => 'required',
-            'product_image' => 'required | mimes:jpg,png,jpeg|max:7048',
+            'product_image' => 'mimes:jpg,png,jpeg|max:7048',
         ],[
             'product_name.required'  => 'Please Enter Product Name',
-            'product_image.required' => 'Please Enter Product Image',
             'product_image.mimes'    => 'Please Select Jpg,png,jpeg Type',
             'product_image.max'      => 'Please Select Image Less Then 8 Mb',
         ]);

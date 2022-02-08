@@ -19,7 +19,7 @@
                 <a class="nav-link" href="">Product</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="">Product Name </a>
-                    <a class="dropdown-item"  href="{{ route('pages.products') }}">More</a>
+                    <a class="dropdown-item"  href="{{ route('products') }}">More</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

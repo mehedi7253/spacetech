@@ -57,7 +57,7 @@
                             @foreach ($prodects as $product)
                               <a class="dropdown-item" href="">{{ $product->product_name }} </a>
                             @endforeach
-                            <a class="dropdown-item"  href="{{ route('pages.products') }}">More</a>
+                            <a class="dropdown-item"  href="{{ route('products') }}">More</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

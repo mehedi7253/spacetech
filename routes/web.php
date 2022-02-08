@@ -38,8 +38,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('contacts', ContactusController::class);
 });
 
-Route::get('products', [HomePageController::class, 'products'])->name('pages.products');
 Route::get('our-technologies', [PageController::class, 'technology'])->name('our-technologies');
+Route::get('products', [PageController::class, 'products'])->name('products');
 
 
 
