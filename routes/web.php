@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
 
 Route::get('our-technologies', [PageController::class, 'technology'])->name('our-technologies');
 Route::get('products', [PageController::class, 'products'])->name('products');
-
+Route::get('products/{id}', [PageController::class, 'product_show'])->name('pages.products.show');
 
 
 Route::get('/products/show', function () {

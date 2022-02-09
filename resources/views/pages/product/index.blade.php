@@ -13,7 +13,7 @@
                                 <img src="{{ asset('images/product/images/'.$product->product_image) }}" style="height: 150px" title="{{ $product->product_name }}">
                             </p>
 
-                            <a href="{{ url('products/show') }}" class="col-md-6 btn text-center mt-4" style="background-color: #0172BC;border-radius: 10px;color: white;">View More</a>
+                            <a href="{{ route('pages.products.show', $product->id) }}" class="col-md-6 btn text-center mt-4" style="background-color: #0172BC;border-radius: 10px;color: white;">View More</a>
                             </div>
 
                         </div>
