@@ -12,6 +12,19 @@
     Features
   </div>
   <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap1"
+      aria-expanded="true" aria-controls="collapseBootstrap">
+      <i class="far fa-fw fa-window-maximize"></i>
+      <span>Product Service</span>
+    </a>
+    <div id="collapseBootstrap1" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" href="{{ route('services.create') }}">Add Service</a>
+        <a class="collapse-item" href="{{ route('services.index') }}">Manage Service</a>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
       aria-expanded="true" aria-controls="collapseBootstrap">
       <i class="far fa-fw fa-window-maximize"></i>

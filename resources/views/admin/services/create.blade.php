@@ -11,7 +11,7 @@
 
       <div class="card">
         <div class="card-header">
-            <h5 class="text-primary">Add Product <a class="btn btn-info float-right" href="{{ route('products.index') }}">All Products     </a></h5>
+            <h5 class="text-primary">Add Service <a class="btn btn-info float-right" href="{{ route('services.index') }}">All Services</a></h5>
             <hr/>
         </div>
         <div class="card-body">

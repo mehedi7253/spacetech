@@ -11,7 +11,7 @@
 
       <div class="card">
         <div class="card-header">
-            <h5 class="text-primary">All Products <a href="{{ route('products.create') }}" class="btn btn-info float-right">Add Product</a></h5>
+            <h5 class="text-primary">All Services <a href="{{ route('services.create') }}" class="btn btn-info float-right">Add Service</a></h5>
             <hr/>
         </div>
         <div class="card-body">
@@ -30,42 +30,28 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>Image one</th>
-                            <th>Image Two</th>
-                            <th>Image Three</th>
+                            <th>Service Name</th>
+                            <th>URL</th>
+                            <th>Service Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($products as $i=>$product)
+                        @foreach ($services as $i=>$service)
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $product->title }}</td>
+                            <td>{{ $service->service_name }}</td>
+                            <td>{{ $service->url }}</td>
                             <td>
-                                @if ($product->image_one == NULL)
+                                @if ($service->service_image == NULL)
                                     NULL
                                 @else
-                                    <img src="{{ asset('images/product/images/'.$product->image_one) }}" class="img-thumbnail" style="height: 50px; width: 50px">
+                                    <img src="{{ asset('images/service/images/'.$service->service_image) }}" class="img-thumbnail" style="height: 50px; width: 50px">
                                 @endif
                             </td>
                             <td>
-                                @if ($product->image_two == NULL)
-                                    NULL
-                                @else
-                                    <img src="{{ asset('images/product/images/'.$product->image_two) }}" class="img-thumbnail" style="height: 50px; width: 50px">
-                                @endif
-                            </td>
-                            <td>
-                                @if ($product->image_three == NULL)
-                                    NULL
-                                @else
-                                    <img src="{{ asset('images/product/images/'.$product->image_three) }}" class="img-thumbnail" style="height: 50px; width: 50px">
-                                @endif
-                            </td>
-                            <td>
-                                <form action="{{ route('productmetas.destroy', $product->id) }}" method="POST">
-                                    <a class="btn btn-info" href="{{ route('productmetas.edit', $product->id) }}"><i class="fa fa-edit"></i></a> |
+                                <form action="{{ route('services.destroy', $service->id) }}" method="POST">
+                                    <a class="btn btn-info" href="{{ route('services.edit', $service->id) }}"><i class="fa fa-edit"></i></a> |
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure to delete !!');"><i class="fa fa-trash"></i></button>
@@ -76,6 +62,9 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="card-footer">
+
         </div>
       </div>
 

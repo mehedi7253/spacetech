@@ -22,7 +22,7 @@
         <!-- Topbar -->
 
         <!-- Container Fluid-->
-        <div class="container-fluid" id="container-wrapper">
+        <div class="container-fluid mb-5" id="container-wrapper">
             @yield('content')
         </div>
         <!---Container Fluid-->

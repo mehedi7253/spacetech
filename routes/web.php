@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactusController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductmetaController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\Teamcontroller;
 use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Page\HomePageController;
@@ -31,6 +32,7 @@ Auth::routes();
 Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::get('index', [AdminController::class, 'index']);
     Route::resource('products', ProductController::class);
+    Route::resource('services', ServiceController::class);
     Route::resource('technologies', TechnologyController::class);
     Route::resource('productmetas', ProductmetaController::class);
     Route::resource('abouts', AboutController::class);

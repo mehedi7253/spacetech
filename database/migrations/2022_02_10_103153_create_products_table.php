@@ -15,10 +15,17 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('product_name');
-            $table->string('url');
-            $table->string('product_image')->nullable();
+            $table->bigInteger('service_id')->unsigned();
+            $table->string('model_no');
+            $table->string('colum_one');
+            $table->string('colum_tow');
+            $table->string('colum_three')->nullable();
+            $table->string('colum_four')->nullable();
+            $table->string('colum_five')->nullable();
+            $table->string('colum_six')->nullable();
+            $table->string('image');
             $table->timestamps();
+            $table->foreign('service_id')->references('id')->on('product_services')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
