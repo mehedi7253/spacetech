@@ -42,10 +42,10 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'service_id '   => 'required',
             'model_no'      => 'required',
             'colum_one'     => 'required',
             'colum_tow'     => 'required',
+            'colum_three'   => 'required',
             'image'         => 'required | mimes:jpg,png,jpeg|max:7048'
 
         ],[
@@ -67,19 +67,15 @@ class ProductController extends Controller
         $product->colum_five  = $request->colum_five;
         $product->colum_six   = $request->colum_six;
 
-        if($request->image == ''){
-            //
-        }else{
-            if ($request->hasFile('image')) {
-                $file = $request->file('image');
-                $extension = $file->getClientOriginalExtension();
-                $fileName = time() . '.' . $extension;
-                $file->move('images/product/images/', $fileName);
-                $product->product_image = $fileName;
-            } else {
-                return $request;
-                $product->product_image = '';
-            }
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time() . '.' . $extension;
+            $file->move('images/product/images/', $fileName);
+            $product->image = $fileName;
+        } else {
+            return $request;
+            $product->image = '';
         }
 
         $product->save();
@@ -107,7 +103,8 @@ class ProductController extends Controller
     {
         $page_name = "Update Product Data";
         $product   = product::find($id);
-        return view('admin.product.edit', compact('page_name','product'));
+        $services  = ProductService::all();
+        return view('admin.product.edit', compact('page_name','product','services'));
     }
 
     /**
@@ -129,14 +126,12 @@ class ProductController extends Controller
             'model_no.required'  => 'Please Enter Product Model Number',
             'colum_one.required' => 'This Filed Must Be Not Empty',
             'colum_tow.required' => 'This Filed Must Be Not Empty',
-            'image.required'     => 'Please Enter Product Image',
             'image.mimes'        => 'Please Select Jpg,png,jpeg Type',
             'image.max'          => 'Please Select Image Less Then 8 Mb',
         ]);
 
-        $product = new product();
+        $product = product::find($id);
         $product->model_no    = $request->model_no;
-        $product->service_id  = $request->service_id;
         $product->colum_one   = $request->colum_one;
         $product->colum_tow   = $request->colum_tow;
         $product->colum_three = $request->colum_three;
@@ -152,15 +147,15 @@ class ProductController extends Controller
                 $extension = $file->getClientOriginalExtension();
                 $fileName = time() . '.' . $extension;
                 $file->move('images/product/images/', $fileName);
-                $product->product_image = $fileName;
+                $product->image = $fileName;
             } else {
                 return $request;
-                $product->product_image = '';
+                $product->image = '';
             }
         }
 
         $product->save();
-        return back()->with('success','Product Added Successful');
+        return back()->with('success','Product Update Successful');
     }
 
     /**

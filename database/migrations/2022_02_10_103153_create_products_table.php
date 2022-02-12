@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('colum_four')->nullable();
             $table->string('colum_five')->nullable();
             $table->string('colum_six')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->foreign('service_id')->references('id')->on('product_services')->onUpdate('cascade')->onDelete('cascade');
         });

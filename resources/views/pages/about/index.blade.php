@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 float-left">
-                    <h1 class="text-center font-weight-bold" style="color: red">About <span style="color: #0172BC">Us</span></h1>
+                    <h1 class="text-center font-weight-bold mt-5 mb-5" style="color: red">About <span style="color: #0172BC">Us</span></h1>
                 </div>
                 <div class="col-md-8 col-sm-12 float-left">
                     <p class="text-justify">

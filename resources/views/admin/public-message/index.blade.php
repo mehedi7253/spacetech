@@ -60,7 +60,7 @@
                                 @php echo $messages->message @endphp
                             </td>
                             <td>
-                                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                                <form action="{{ route('contacts.destroy', $messages->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure to delete !!');"><i class="fa fa-trash"></i></button>

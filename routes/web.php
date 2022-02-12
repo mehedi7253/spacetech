@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\ProductmetaController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\Teamcontroller;
 use App\Http\Controllers\Admin\TechnologyController;
-use App\Http\Controllers\Page\HomePageController;
 use App\Http\Controllers\Page\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,22 +41,10 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
 
 Route::get('our-technologies', [PageController::class, 'technology'])->name('our-technologies');
 Route::get('products', [PageController::class, 'products'])->name('products');
-Route::get('products/{id}', [PageController::class, 'product_show'])->name('pages.products.show');
+Route::get('products/{url}', [PageController::class, 'product_show'])->name('pages.products.show');
+Route::get('fetaures', [PageController::class, 'fetaures'])->name('fetaures');
+Route::get('team-members', [PageController::class, 'teamMembers'])->name('teammembers');
+Route::get('contact-us', [PageController::class, 'contactForm'])->name('contactform');
+Route::post('contact-store', [PageController::class, 'contactStore'])->name('contact-store');
+Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
 
-
-Route::get('/products/show', function () {
-    return view('pages.product.show');
-});
-Route::get('/fetaures', function () {
-    return view('pages.features.index');
-});
-
-Route::get('/about', function () {
-    return view('pages.about.index');
-});
-Route::get('/team-members', function () {
-    return view('pages.about.team_member');
-});
-Route::get('/contact', function () {
-    return view('pages.contact.index');
-});

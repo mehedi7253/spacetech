@@ -25,36 +25,90 @@
                     </div>
                 </div>
             @endif
-            <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group">
+                <div class="form-group col-md-6 float-left">
                     <label>Service Name: <sup class="text-danger">*</sup></label>
-                    <input type="text" name="service_name" id="service_name" class="form-control @error('service_name') is-invalid @enderror" value="{{ old('service_name') }}" placeholder="Enter Service Name" autocomplete="service_name" autofocus>
-                    @error('service_name')
+                   <select class="form-control" name="service_id">
+                       <option>------Select One Service------</option>
+                       @foreach ($services as $service)
+                            <option value="{{ $service->id }}">{{ $service->service_name }}</option>
+                       @endforeach
+                   </select>
+                </div>
+                <div class="form-group col-md-6 float-left">
+                    <label>Model Number: <sup class="text-danger">*</sup></label>
+                    <input id="model_no" type="text" class="form-control @error('model_no') is-invalid @enderror" name="model_no" value="{{ old('model_no') }}" placeholder="Enter Model Number" autocomplete="model_no" autofocus>
+                    @error('model_no')
                     <span class="invalid-feedback" role="alert">
                          <label style="color: red">{{ $message }}</label>
                      </span>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>URL: <sup class="text-danger">*</sup></label>
-                    <input id="url" type="text" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ old('url') }}" placeholder="Enter URL" autocomplete="url" autofocus>
-                    @error('url')
+                <div class="form-group col-md-6 float-left">
+                    <label>Colum One: <sup class="text-danger">*</sup></label>
+                    <input id="colum_one" type="text" class="form-control @error('colum_one') is-invalid @enderror" name="colum_one" value="{{ old('colum_one') }}" placeholder="Enter Column Data One" autocomplete="colum_one" autofocus>
+                    @error('colum_one')
                     <span class="invalid-feedback" role="alert">
                          <label style="color: red">{{ $message }}</label>
                      </span>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Service Image: <sup class="text-danger">*</sup></label>
-                    <input id="service_image" type="file" class="form-control @error('service_image') is-invalid @enderror" name="service_image" value="{{ old('service_image') }}">
-                    @error('service_image')
+                <div class="form-group col-md-6 float-left">
+                    <label>Colum Two: <sup class="text-danger">*</sup></label>
+                    <input id="colum_tow" type="text" class="form-control @error('colum_tow') is-invalid @enderror" name="colum_tow" value="{{ old('colum_tow') }}" placeholder="Enter Column Data Two" autocomplete="colum_tow" autofocus>
+                    @error('colum_tow')
                     <span class="invalid-feedback" role="alert">
                          <label style="color: red">{{ $message }}</label>
                      </span>
                     @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6 float-left">
+                    <label>Colum Three: <sup class="text-danger">*</sup></label>
+                    <input id="colum_three" type="text" class="form-control @error('colum_three') is-invalid @enderror" name="colum_three" value="{{ old('colum_three') }}" placeholder="Enter Column Data Three" autocomplete="colum_three" autofocus>
+                    @error('colum_three')
+                    <span class="invalid-feedback" role="alert">
+                         <label style="color: red">{{ $message }}</label>
+                     </span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6 float-left">
+                    <label>Colum Four:</label>
+                    <input id="colum_four" type="text" class="form-control @error('colum_four') is-invalid @enderror" name="colum_four" value="{{ old('colum_four') }}" placeholder="Enter Column Data Four" autocomplete="colum_four" autofocus>
+                    @error('colum_four')
+                    <span class="invalid-feedback" role="alert">
+                         <label style="color: red">{{ $message }}</label>
+                     </span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6 float-left">
+                    <label>Colum Five: </label>
+                    <input id="colum_five" type="text" class="form-control @error('colum_five') is-invalid @enderror" name="colum_five" value="{{ old('colum_five') }}" placeholder="Enter Column Data Five" autocomplete="colum_five" autofocus>
+                    @error('colum_five')
+                    <span class="invalid-feedback" role="alert">
+                         <label style="color: red">{{ $message }}</label>
+                     </span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6 float-left">
+                    <label>Colum Six: </label>
+                    <input id="colum_six" type="text" class="form-control @error('colum_six') is-invalid @enderror" name="colum_six" value="{{ old('colum_six') }}" placeholder="Enter Column Data Six" autocomplete="colum_six" autofocus>
+                    @error('colum_six')
+                    <span class="invalid-feedback" role="alert">
+                         <label style="color: red">{{ $message }}</label>
+                     </span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6 float-left">
+                    <label>Product Image: <sup class="text-danger">*</sup></label>
+                    <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                    @error('image')
+                    <span class="invalid-feedback" role="alert">
+                         <label style="color: red">{{ $message }}</label>
+                     </span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6 float-left">
                     <label></label>
                     <input type="submit" name="btn" class="btn btn-success col-md-5 btn-block" value="Submit">
                 </div>

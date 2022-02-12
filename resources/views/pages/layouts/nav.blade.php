@@ -16,24 +16,29 @@
                 <a class="nav-link" href="{{ route('our-technologies') }}">Techonology</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="">Product</a>
+                <a class="nav-link" href="{{ route('products') }}">Product</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">Product Name </a>
+                    @php
+                        $prodects = DB::table('product_services')->limit('5')->get();
+                    @endphp
+                    @foreach ($prodects as $service)
+                        <a class="dropdown-item" href="{{ route('pages.products.show', ['url' => $service->url]) }}">{{ $service->service_name }} </a>
+                    @endforeach
                     <a class="dropdown-item"  href="{{ route('products') }}">More</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="#event">About</a>
+                <a class="nav-link" href="{{ route('about-us') }}">About</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item"  href="{{ url('about') }}">About Us </a>
-                    <a class="dropdown-item" href="{{ url('team-members') }}">Team Member</a>
+                    <a class="dropdown-item"  href="{{route('about-us')}}">About Us </a>
+                    <a class="dropdown-item" href="{{ route('teammembers') }}">Team Member</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('fetaures') }}">Features</a>
+                <a class="nav-link" href="{{ route('fetaures') }}">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('contact') }}">Contact Us</a>
+                <a class="nav-link" href="{{ route('contactform') }}">Contact Us</a>
             </li>
         </ul>
     </div>
