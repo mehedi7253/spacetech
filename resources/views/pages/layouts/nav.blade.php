@@ -34,6 +34,17 @@
                     <a class="dropdown-item" href="{{ route('teammembers') }}">Team Member</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#">Our Design</a>
+                <div class="dropdown-menu">
+                    @php
+                        $designs = DB::table('designs')->get();
+                    @endphp
+                    @foreach ($designs as $design)
+                      <a class="dropdown-item" href="">{{ $design->name }} </a>
+                    @endforeach
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('fetaures') }}">Features</a>
             </li>

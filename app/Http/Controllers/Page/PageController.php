@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use App\Models\contactus;
+use App\Models\design;
 use App\Models\ProductService;
 use App\Models\teamMember;
 use Illuminate\Http\Request;
@@ -71,6 +72,10 @@ class PageController extends Controller
     public function aboutUs()
     {
         return view('pages.about.index');
+    }
+    public function desgin(){
+        $designs = design::all();
+        return view('pages.design.index', compact('designs'));
     }
 
 }

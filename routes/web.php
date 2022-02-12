@@ -3,9 +3,11 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactusController;
+use App\Http\Controllers\Admin\DesignController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductmetaController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SubdesignController;
 use App\Http\Controllers\Admin\Teamcontroller;
 use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Page\PageController;
@@ -37,6 +39,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('abouts', AboutController::class);
     Route::resource('team', Teamcontroller::class);
     Route::resource('contacts', ContactusController::class);
+    Route::resource('designs', DesignController::class);
+    Route::resource('sub-designs', SubdesignController::class);
 });
 
 Route::get('our-technologies', [PageController::class, 'technology'])->name('our-technologies');
@@ -47,3 +51,4 @@ Route::get('team-members', [PageController::class, 'teamMembers'])->name('teamme
 Route::get('contact-us', [PageController::class, 'contactForm'])->name('contactform');
 Route::post('contact-store', [PageController::class, 'contactStore'])->name('contact-store');
 Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
+Route::get('our-designs', [PageController::class, 'desgin'])->name('our-design');
