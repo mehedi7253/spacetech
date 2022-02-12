@@ -11,7 +11,7 @@
 
       <div class="card">
         <div class="card-header">
-            <h5 class="text-primary">All Designs <a href="{{ route('designs.create') }}" class="btn btn-info float-right">Add Design</a></h5>
+            <h5 class="text-primary">All Services <a href="{{ route('services.create') }}" class="btn btn-info float-right">Add Service</a></h5>
             <hr/>
         </div>
         <div class="card-body">
@@ -30,25 +30,28 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th> Name</th>
-                            <th>URL</th>
-                            <th>Add More</th>
+                            <th>Model No</th>
+                            <th>Image</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($desgins as $i=>$desgin)
+                        @foreach ($sub_design as $i=>$sub_designs)
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $desgin->name }}</td>
-                            <td>{{ $desgin->url }}</td>
+                            <td>{{ $sub_designs->model_no }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('sub-designs.show', $desgin->id) }}"><i class="fa fa-plus"></i></a>
+                                <img src="{{ asset('images/subdesign/images/'.$sub_designs->image) }}" class="img-thumbnail" style="height: 50px; width: 50px">
                             </td>
                             <td>
-                                <form action="{{ route('designs.destroy', $desgin->id) }}" method="POST">
-                                    <a class="btn btn-info" href="{{ route('designs.edit', $desgin->id) }}"><i class="fa fa-edit"></i></a> |
-                                    <a class="btn btn-success" href="{{ route('designs.show', $desgin->id) }}"><i class="fa fa-eye"></i></a> |
+                                @php
+                                    echo $sub_designs->description 
+                                @endphp
+                            </td>
+                            <td>
+                                <form action="{{ route('sub-designs.destroy', $sub_designs->id) }}" method="POST">
+                                    <a class="btn btn-info" href="{{ route('sub-designs.edit', $sub_designs->id) }}"><i class="fa fa-edit"></i></a> |
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure to delete !!');"><i class="fa fa-trash"></i></button>

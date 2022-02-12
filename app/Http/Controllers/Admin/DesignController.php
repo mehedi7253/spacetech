@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\design;
+use App\Models\subDesign;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DesignController extends Controller
 {
@@ -64,7 +66,14 @@ class DesignController extends Controller
      */
     public function show($id)
     {
-        //
+        $page_name = "All Sub Designs";
+        $sub_design = subDesign::all()->where('desgin_id','=',$id);
+
+        // $sub_design = DB::table('sub_designs')
+        //            ->join('designs','designs.id','=','sub_designs.desgin_id')
+        //            ->where('sub_designs.desgin_id','=',$id)
+        //            ->get();
+        return view('admin.sub-design.alldesign',compact('page_name','sub_design'));
     }
 
     /**
