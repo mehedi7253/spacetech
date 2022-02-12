@@ -47,4 +47,3 @@ Route::get('team-members', [PageController::class, 'teamMembers'])->name('teamme
 Route::get('contact-us', [PageController::class, 'contactForm'])->name('contactform');
 Route::post('contact-store', [PageController::class, 'contactStore'])->name('contact-store');
 Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
-
