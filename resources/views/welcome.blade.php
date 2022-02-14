@@ -55,7 +55,7 @@
                                 $prodects = DB::table('product_services')->limit('5')->get();
                             @endphp
                             @foreach ($prodects as $service)
-                              <a class="dropdown-item" href="{{ route('pages.products.show', ['url' => $service->url]) }}">{{ $service->service_name }} </a>
+                                <a class="dropdown-item" href="{{ route('pages.products.show', ['url' => $service->url]) }}">{{ $service->service_name }} </a>
                             @endforeach
                             <a class="dropdown-item"  href="{{ route('products') }}">More</a>
                         </div>
@@ -74,7 +74,7 @@
                                 $designs = DB::table('designs')->get();
                             @endphp
                             @foreach ($designs as $design)
-                              <a class="dropdown-item" href="">{{ $design->name }} </a>
+                              <a class="dropdown-item" href="{{ route('pages.design.show', ['url' => $design->url]) }}">{{ $design->name }} </a>
                             @endforeach
                         </div>
                     </li>

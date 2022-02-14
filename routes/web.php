@@ -52,3 +52,4 @@ Route::get('contact-us', [PageController::class, 'contactForm'])->name('contactf
 Route::post('contact-store', [PageController::class, 'contactStore'])->name('contact-store');
 Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
 Route::get('our-designs', [PageController::class, 'desgin'])->name('our-design');
+Route::get('design/{url}', [PageController::class, 'desgin_show'])->name('pages.design.show');

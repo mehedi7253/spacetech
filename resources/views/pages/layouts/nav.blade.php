@@ -41,7 +41,7 @@
                         $designs = DB::table('designs')->get();
                     @endphp
                     @foreach ($designs as $design)
-                      <a class="dropdown-item" href="">{{ $design->name }} </a>
+                      <a class="dropdown-item" href="{{ route('pages.design.show', ['url' => $design->url]) }}">{{ $design->name }} </a>
                     @endforeach
                 </div>
             </li>

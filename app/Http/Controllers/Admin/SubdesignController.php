@@ -90,7 +90,9 @@ class SubdesignController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page_name  = "Update Sub Design";
+        $subdesigns = subDesign::find($id);
+        return view('admin.sub-design.edit', compact('page_name','subdesigns'));
     }
 
     /**
@@ -102,7 +104,38 @@ class SubdesignController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'model_no'    => 'required',
+            'description' => 'required',
+            'image'       => 'mimes:png,jpg,jpeg |max:7048'
+        ],[
+            'model_no.required'    => 'Enter Model No',
+            'description.required' => 'Enter Description',
+            'image.mimes'          => 'Please Select png,jpg, jpeg format',
+            'image.max'            => 'Image size must be 5 be maximum'
+        ]);
+
+        $sub_desgin = subDesign::find($id);
+        $sub_desgin->model_no    = $request->model_no;
+        $sub_desgin->description = $request->description;
+
+        if($request->image == ''){
+            //
+        }else{
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $fileName = time() . '.' . $extension;
+                $file->move('images/subdesign/images/', $fileName);
+                $sub_desgin->image = $fileName;
+            } else {
+                return $request;
+                $sub_desgin->image = '';
+            }
+        }
+
+        $sub_desgin->save();
+        return back()->with('success','Update Successfull');
     }
 
     /**
@@ -113,6 +146,8 @@ class SubdesignController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $design = subDesign::find($id);
+        $design->delete();
+        return back()->with('success','Delete Successfull');
     }
 }

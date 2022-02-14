@@ -24,10 +24,21 @@ class PageController extends Controller
     public function product_show($url)
     {
         $services = DB::table('product_services')->where('url','=',$url)->get();
+
         foreach($services as $service)
         {
-            $service_id = $service->id;
+            if($service->id == '2')
+            {
+                return view('pages.product.escalator');
+            }elseif($service->id == '3'){
+                return view('pages.product.cargo');
+            }elseif($service->id == '4'){
+                return view('pages.product.hospital');
+            }else{
+                $service_id = $service->id;
+            }
         }
+
         $products = DB::table('products')->where('service_id','=', $service_id)->get();
         return view('pages.product.show', compact('products', 'services'));
     }
@@ -76,6 +87,18 @@ class PageController extends Controller
     public function desgin(){
         $designs = design::all();
         return view('pages.design.index', compact('designs'));
+    }
+
+    public function desgin_show($url)
+    {
+        $design_category = DB::table('designs')->where('url','=',$url)->get();
+        foreach($design_category as $design_categories)
+        {
+            $sub_design_id = $design_categories->id;
+        }
+        $design = DB::table('sub_designs')->where('desgin_id','=', $sub_design_id)->get();
+
+        return view('pages.design.show', compact('design_category', 'design'));
     }
 
 }
